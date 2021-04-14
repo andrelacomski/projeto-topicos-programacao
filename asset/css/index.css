@@ -1,0 +1,32 @@
+.line-green {
+    border: solid 2px #77cc6d
+}
+.container-green {
+    background-color: #77cc6d;
+    color: #FFF;
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.green {
+    background-color: #77cc6d !important;
+}
+.nav-link {
+    color: #313131 !important;
+}
+.nav .active {
+    color: #FFFFFF !important;
+}
+.container-opacity {
+    background-color: rgba(0, 0,0, 0.1);
+    color: #FFF;
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center;
+}
