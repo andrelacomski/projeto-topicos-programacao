@@ -7,9 +7,9 @@ Utilização de dois frameworks CSS e JS
 
 1. Home;
  - Banner principal com carrousel
-3. Página de Contato
+2. Página de Contato
  - Validação dos campos
-4. Página de produtos
+3. Página de produtos
  - Ao clicar sobre o nome/imagem do produto deve aparecer um modal/dialog com mais informações sobre o produto
  - Ao clicar sobre botão comprar, adicionar produto ao carrinho de compras
 4. Página de carrinho de compras;
