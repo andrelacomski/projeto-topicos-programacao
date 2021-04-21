@@ -38,14 +38,15 @@
                     <a class="nav-item nav-link">Contatos</a>
                 </nav>
             </div>
-            <div style="background-color: #797979; height: 500px; border: 1px solid #333">
-                <!-- Banner de background -->
-                <div class="d-flex flex-column align-items-end justify-items-end">
-                    <div class="mb-auto">
-                        <a class="container-green">XTH-3000</a>
-                    </div>
-                    <div class="mb-auto container-opacity center">
-                        As melhores imagens do mercado, direto para você!
+            <div class="banner">
+                <div style="position: relative;">
+                    <div class="banner-text">
+                        <div class="banner-marca">
+                            <a class="container-green">XTH-3000</a>
+                        </div>
+                        <div class="container-opacity center">
+                            As melhores imagens do mercado, direto para você!
+                        </div>
                     </div>
 
                 </div>
@@ -76,34 +77,40 @@
             </div>
         </div>
         <div>
-            <div class="mb-4 mt-4 center">
+            <div class="mb-4 center container-40">
                 <h3>Trabalhos Recentes</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error fugit blanditiis mollitiandae laboriosam saepe!</p>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <figure class="figure">
-                        <img src="..." class="figure-img" width="400px">
-                        <figcaption class="figure-caption">Imagem 1</figcaption>
-                    </figure>
+            <div class="row container-40 container-image">
+                <div class="col-md-3 center">
+                    <div class="figure-image">
+                        <img src="./asset/image/img-04.jpg" height="300px" width="100%">
+                    </div>
+                    <div class="caption-image">
+                        <p>Imagem 1</p>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <figure class="figure">
-                        <img src="..." class="figure-img" width="400px">
-                        <figcaption class="figure-caption">Imagem 2</figcaption>
-                    </figure>
+                <div class="col-md-3 center">
+                    <div class="figure-image">
+                        <img src="./asset/image/img-05.jpg" height="300px" width="100%">
+                    </div class="figure-image">
+                    <div class="caption-image">
+                        <p>Imagem 2</p>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <figure class="figure">
-                        <img src="..." class="figure-img" width="400px">
-                        <figcaption class="figure-caption">Imagem 3</figcaption>
-                    </figure>
+                <div class="col-md-3 center">
+                    <div class="figure-image">
+                        <img src="./asset/image/img-06.jpg" height="300px" width="100%">
+                    </div>
+                    <div class="caption-image">
+                        <p>Imagem 3</p>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <figure class="figure">
-                        <img src="..." class="figure-img" width="400px">
-                        <figcaption class="figure-caption">Imagem 4</figcaption>
-                    </figure>
+                <div class="col-md-3 center">
+                    <img src="./asset/image/img-07.jpg" height="300" width="100%">
+                    <div class="caption-image">
+                        <p>Imagem 4</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,7 +118,7 @@
     <footer class="container-fluid mt-4">
         <div class="row p-4">
             <div class="col-md-4">
-                <h3>Categorias</h3>
+                <h3 class="footer-title">Categorias</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Categoria 1</li>
                     <li class="list-group-item">Categoria 2</li>
@@ -120,7 +127,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h3>Posts Recentes</h3>
+                <h3 class="footer-title">Posts Recentes</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Lorem Ipsum</li>
                     <li class="list-group-item">Lorem Ipsum</li>
@@ -129,7 +136,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <h3>Contatos</h3>
+                <h3 class="footer-title">Contatos</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Informação 1</li>
                     <li class="list-group-item">Informação 2</li>
@@ -142,7 +149,7 @@
         </div>
         <div class="line-green mt-4"></div>
         <div class="right mt-2 mb-2">
-            <nav class="nav">
+            <nav class="nav small">
                 <a class="nav-item nav-link">Blog</a>
                 <a class="nav-item nav-link">Suporte</a>
                 <a class="nav-item nav-link">Contato</a>

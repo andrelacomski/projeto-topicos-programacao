@@ -2,6 +2,25 @@
     border: solid 2px #77cc6d
 }
 
+.banner {
+    background-image: url('../image/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.banner-text {
+    position: absolute;
+    right: 0;
+    margin-top: 350px;
+}
+
+.banner-marca {
+    float: right;
+    margin-top: -30px;
+}
+
 .container-green {
     background-color: #77cc6d;
     color: #FFF;
@@ -25,7 +44,7 @@
 }
 
 .container-opacity {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8);
     color: #FFF;
     margin: 20px;
     padding: 10px 15px;
@@ -65,4 +84,46 @@ h3 {
 
 p {
     color: #727272;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.container-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.figure-image {
+    position: absolute;
+}
+
+.caption-image {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 10px;
+    width: 100%;
+    bottom: 0px;
+    z-index: 10;
+}
+
+.caption-image p {
+    color: #333;
+}
+
+.container-image .col-md-3 {
+    position: relative;
+    padding: 0px;
+}
+
+.footer-title {
+    display: inline-block;
+    border-bottom: 2px solid #77cc6d;
+    padding-bottom: 5px;
+    padding-right: 30px;
+}
+
+.banner-marca a:hover {
+    color: #FFF !important;
 }
