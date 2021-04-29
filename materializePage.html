@@ -1,124 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materialize Page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="asset/materialize/css/materialize.min.css">
-    <script src="asset/materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="asset/css/index.css">
 </head>
+
 <body>
-    <header>
-        <div>
-            <div>
+    <div class="line-green"></div>
+    <header class="container">
+        <div class="row">
+            <div class="col s6">
                 <h3>Web-Cliente</h3>
                 <p>Universidade Tecnológica Federal do Paraná</p>
             </div>
-            <div>
-                <input type="text" placeholder="Digite aqui sua pesquisa">
-                <button type="button">Pesquisar</button>
+            <div class="col s4 offset-s2">
+                <div class="row">
+                    <input type="text" placeholder="Digite aqui sua pesquisa">
+                    <button class="btn btn-success green" type="button">Pesquisar</button>
+                </div>
             </div>
         </div>
     </header>
 
-    <div>
-        <div>
-            <ul>
-                <li>Home</li>
-                <li>Blog</li>
-                <li>Produtos</li>
-                <li>Contatos</li>
+    <div class="container nav-top">
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab active green">Home</li>
+                <li class="tab">Blog</li>
+                <li class="tab">Produtos</li>
+                <li class="tab">Contatos</li>
             </ul>
         </div>
-        <div>
-            <!-- Banner de background -->
-            <div> 
-                <p>XTH-300</p>
-            </div>
-            <div>
-                <p>As melhores imagens do mercado, direto para você!</p>
+        <div class="banner">
+            <div style="position: relative;">
+                <div class="banner-text">
+                    <div class="banner-marca">
+                        <a class="container-green">XTH-3000</a>
+                    </div>
+                    <div class="container-opacity center">
+                        As melhores imagens do mercado, direto para você!
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div>
-        <div>
-            <img src="..." >
+    <div class="row container container-40 grid-img">
+        <div class="col s4 center-align">
+            <div class="image">
+                <img src="./asset/image/img-01.jpg" height="300">
+            </div>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Totam error fugit blanditiis mollitiandaelaboriosam saepe!</p>
         </div>
-        <div>
-            <img src="..." >
+        <div class="col s4 center-align">
+            <div class="image">
+                <img src="./asset/image/img-02.jpg" height="300">
+            </div>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Totam error fugit blanditiis mollitiandaelaboriosam saepe!</p>
         </div>
-        <div>
-            <img src="..." >
+        <div class="col s4 center-align">
+            <div class="image">
+                <img src="./asset/image/img-03.jpg" height="300">
+            </div>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Totam error fugit blanditiis mollitiandaelaboriosam saepe!</p>
         </div>
     </div>
-    <div>
-        <h3>Trabalhos Recentes</h3>
-        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error fugit blanditiis mollitiandae
-            laboriosam saepe!</h4>
-        <div>
-            <figure>
-                <img src="...">
-                <figcaption>Imagem 1</figcaption>
-            </figure>
-            <figure>
-                <img src="...">
-                <figcaption>Imagem 2</figcaption>
-            </figure>
-            <figure>
-                <img src="...">
-                <figcaption>Imagem 3</figcaption>
-            </figure>
-            <figure>
-                <img src="...">
-                <figcaption>Imagem 4</figcaption>
-            </figure>
+    <div class="container">
+        <div class="center-align container-40">
+            <h3>Trabalhos Recentes</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error fugit blanditiis mollitiandae laboriosam saepe!
         </div>
+        </p>
+        <div class="row container-image container-40">
+            <div class="col s3 center-align">
+                <img src="./asset/image/img-04.jpg" height="300px" width="100%">
+                <div class="caption-image pt-0">
+                    <p>Imagem 1</p>
+                </div>
+            </div>
+            <div class="col s3 center-align">
+                <img src="./asset/image/img-05.jpg" height="300px" width="100%">
+                <div class="caption-image pt-0">
+                    <p>Imagem 2</p>
+                </div>
+            </div>
+            <div class="col s3 center-align">
+                <img src="./asset/image/img-06.jpg" height="300px" width="100%">
+                <div class="caption-image pt-0">
+                    <p>Imagem 3</p>
+                </div>
+            </div>
+            <div class="col s3 center-align">
+                <img src="./asset/image/img-07.jpg" height="300" width="100%">
+                <div class="caption-image pt-0">
+                    <p>Imagem 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <footer>
-        <div>
-            <div>
-                <h3>Categorias</h3>
-                <ul>
-                    <li>Categoria 1</li>
-                    <li>Categoria 2</li>
-                    <li>Categoria 3</li>
+        <div class="row container">
+            <div class="col s4">
+                <h3 class="footer-title">Categorias</h3>
+                <ul class="collection">
+                    <li class="collection-item">Categoria 1</li>
+                    <li class="collection-item">Categoria 2</li>
+                    <li class="collection-item">Categoria 3</li>
                 </ul>
             </div>
-            <div>
-                <h3>Posts Recentes</h3>
-                <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
-                    <li>Lorem Ipsum</li>
+            <div class="col s4">
+                <h3 class="footer-title">Posts Recentes</h3>
+                <ul class="collection red">
+                    <li class="collection-item">Lorem Ipsum</li>
+                    <li class="collection-item">Lorem Ipsum</li>
+                    <li class="collection-item">Lorem Ipsum</li>
                 </ul>
             </div>
-            <div>
-                <h3>Contatos</h3>
-                <ul>
-                    <li>Informação 1</li>
-                    <li>Informação 2</li>
-                    <li>Informação 3</li>
-                    <li>Informação 4</li>
-                    <li>Informação 5</li>
+            <div class="col s4">
+                <h3 class="footer-title">Contatos</h3>
+                <ul class="collection">
+                    <li class="collection-item">Informação 1</li>
+                    <li class="collection-item">Informação 2</li>
+                    <li class="collection-item">Informação 3</li>
+                    <li class="collection-item">Informação 4</li>
+                    <li class="collection-item">Informação 5</li>
                 </ul>
             </div>
         </div>
-        <div>
-            <div>
-                <ul>
-                    <li>Blog</li>
-                    <li>Suporte</li>
-                    <li>Contato</li>
+        <div class="line-green"></div>
+        <div class="white">
+            <div class="nav-content right">
+                <ul class="tabs tabs-transparent small">
+                    <li class="tab">Blog</li>
+                    <li class="tab">Suporte</li>
+                    <li class="tab">Contato</li>
                 </ul>
             </div>
         </div>
     </footer>
+    <script src="asset/materialize/js/materialize.min.js"></script>
 </body>
+
 </html>
