@@ -165,3 +165,26 @@ p {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.search {
+    float: right;
+    margin-top: 30px;
+}
+
+.search input {
+    border: 1px solid #ced4da !important;
+    border-radius: 5px;
+    width: 250px !important;
+    height: 36px !important;
+}
+
+.search input::placeholder {
+    padding-left: 10px;
+    color: #717579
+}
+
+.search button {
+    margin-left: -5px;
+    margin-top: -5px;
+    height: 37px !important;
+}
