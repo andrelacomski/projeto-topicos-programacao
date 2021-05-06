@@ -4,12 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport">
-    <title>Formulário de contato</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacomski Agrícola</title>
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/index.css">
 </head>
 
 <body>
+    <div class="line-green"></div>
+    <div class="m-4">
+        <header>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="index.html" class="logo">
+                        <h3>Lacomski Agrícola</h3>
+                        <p>Tudo para sua agricultura</p>
+                    </a>
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <div class="input-group float-right">
+                        <input class="form-control" type="text" placeholder="Digite aqui sua pesquisa">
+                        <button class="btn btn-success green" type="button">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mb-4 center container-40">
+            <h3>Entre em contato</h3>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6">
+                <form class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        <div class="invalid-feedback">Campo nome é obrigatório</div>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu melhor e-mail" required>
+                        <div class="invalid-feedback">Campo e-mail é obrigatório</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Exemplo (11) 11111-1111" required>
+                        <div class="invalid-feedback">Campo telefone é obrigatório.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <select class="custom-select" id="assunto" name="assunto">
+                            <option value="devolucoes">Devoluções</option>
+                            <option selecte value="financeiro">Financeiro</option>
+                            <option value="produtos">Produtos</option>
+                            <option value="reclamacao">Reclamações</option>
+                            <option value="sugestoes">Sugestões</option>
+                        </select>
+                        <div class="invalid-feedback">Campo assunto é obrigatório.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mesagem">Mensagem</label>
+                        <textarea class="form-control" required></textarea>
+                        <div class="invalid-feedback">Campo mensagem é obrigatório</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Aceito os Termos e Condições de Uso.
+                            </label>
+                            <div class="invalid-feedback">
+                                Você deve concordar para continuar.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark btn-block" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="container-fluid mt-4">
+            <div class="row p-4">
+                <div class="col-md-4">
+                    <h3 class="footer-title">Categorias</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Tratores</li>
+                        <li class="list-group-item">Equipamentos</li>
+                        <li class="list-group-item">Colheitadeiras</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">Posts Recentes</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Milho segunda safra</li>
+                        <li class="list-group-item">Ferramentas para sua gestão</li>
+                        <li class="list-group-item">Ferrugem Asiática da Soja</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">Contatos</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">contato@lojagricola.com.br</li>
+                        <li class="list-group-item">(42) 3323-2728</li>
+                        <li class="list-group-item">(42) 3323-2232</li>
+                        <li class="list-group-item">Ponta Grossa - PR</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="line-green mt-4"></div>
+            <div class="right mt-2 mb-2">
+                <nav class="nav small">
+                    <a class="nav-item nav-link">Blog</a>
+                    <a class="nav-item nav-link" href="contato.html">Suporte</a>
+                    <a class="nav-item nav-link" href="contato.html">Contato</a>
+                </nav>
+            </div>
+        </footer>
+        <script src="asset/jquery/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
 </body>
 
 </html>

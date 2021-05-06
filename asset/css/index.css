@@ -188,3 +188,7 @@ p {
     margin-top: -5px;
     height: 37px !important;
 }
+
+.logo:hover {
+    text-decoration: none;
+}
