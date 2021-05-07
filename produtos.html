@@ -4,12 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport">
-    <title>Produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacomski Agrícola</title>
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/index.css">
 </head>
 
 <body>
+    <div class="line-green"></div>
+    <div class="m-4">
+        <header>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="index.html" class="logo">
+                        <h3>Lacomski Agrícola</h3>
+                        <p>Tudo para sua agricultura</p>
+                    </a>
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <div class="input-group float-right">
+                        <input class="form-control" type="text" placeholder="Digite aqui sua pesquisa">
+                        <button class="btn btn-success green" type="button">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mb-4 center container-40">
+            <h3>Nossos Produtos</h3>
 
+            <div class="container-produtos row d-flex justify-content-center" id='container-produtos'>
+
+            </div>
+        </div>
+
+        <footer class="container-fluid mt-4" style="border-radius: 12px;">
+            <div class="row p-4">
+                <div class="col-md-4">
+                    <h3 class="footer-title">Categorias</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Tratores</li>
+                        <li class="list-group-item">Equipamentos</li>
+                        <li class="list-group-item">Colheitadeiras</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">Posts Recentes</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Milho segunda safra</li>
+                        <li class="list-group-item">Ferramentas para sua gestão</li>
+                        <li class="list-group-item">Ferrugem Asiática da Soja</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">Contatos</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">contato@lojagricola.com.br</li>
+                        <li class="list-group-item">(42) 3323-2728</li>
+                        <li class="list-group-item">(42) 3323-2232</li>
+                        <li class="list-group-item">Ponta Grossa - PR</li>
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="line-green mt-4"></div>
+            <div class="right mt-2 mb-2">
+                <nav class="nav small">
+                    <a class="nav-item nav-link">Blog</a>
+                    <a class="nav-item nav-link" href="contato.html">Suporte</a>
+                    <a class="nav-item nav-link" href="contato.html">Contato</a>
+                </nav>
+            </div>
+        </footer>
+        <script src="asset/jquery/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+
+        <script>
+            let produtos = [{
+                id: 1,
+                nome: 'Trator New Holland T4',
+                descricao: 'Com uma cabine desenvolvida para fornecer ao operador o melhor conforto da classe, a New Holland tem ao seu favor a premiada Blue Cab™ 4 reconhecida como uma das mais confortáveis e seguras do seguimento. Atende aos padrões de filtragem internacionais o que proporciona ao operador melhor proteção durante as operações de campo. Ergonômica e silenciosa os níveis de ruído dentro da cabine atingem apenas 78 dBA.',
+                preco: 199000.00,
+                parcela: 19900.00,
+                imagem: 'asset/image/produtos/produto-01.jpg',
+            }, {
+                id: 2,
+                nome: 'PNEU 750-16 FRONTIERA 8 LONAS',
+                descricao: 'Pneu 750-16 Frontiera 2<br>Marca MAGGION<br>- Pneu diagonal para uso com câmara;<br>- Indicado para uso agrícola;<br>- Possui alta resistência nas laterais, o desenho de sua banda de rodagem formado por barras diagonais auxilia na tração, boa autolimpeza e proporciona boa flutuabilidade;',
+                preco: 3900.00,
+                parcela: 399.00,
+                imagem: 'asset/image/produtos/produto-02.jpg',
+            }, {
+                id: 3,
+                nome: 'ATOMIZADOR GASOLINA 56,5 CC',
+                descricao: 'O Atomizador TMD57BU da Toyama tem um com o melhor custo-benefício do mercado.',
+                preco: 1340.00,
+                parcela: 134.00,
+                imagem: 'asset/image/produtos/produto-03.jpg',
+            }, {
+                id: 4,
+                nome: 'ARADO 3 DISCOS 28 POLEGADAS',
+                descricao: 'O Arado Fixo BALDAN AF, foi desenvolvido para trabalhos em terrenos dos mais diversos tipos, proporcionando um trabalho de qualidade e rendimento em aração, podendo ser utilizado também para a construção de curvas de nível, possui múltiplas regulagens nos discos, como altura, giro e inclinação dos mesmos garantindo o melhor ajuste para cada tipo de solo.',
+                preco: 9900.00,
+                parcela: 990.00,
+                imagem: 'asset/image/produtos/produto-04.jpg',
+            }, {
+                id: 5,
+                nome: 'APARADOR DE CERCA VIVA 600W',
+                descricao: '﻿As cercas-vivas, muros verdes e arbustos ficarão ainda mais bonitos depois que você contar com o Podador de Cerca-Viva Elétrico Tramontina PE50 com Navalha de 500 mm de Comprimento 600 W 220 V. Com ele será possível aparar as áreas verdes com muita facilidade, pois o Podador da Tramontina é um produto leve e compacto. Além disso, oferece um manuseio confortável e seguro, pois conta com empunhadura de duplo acionamento e cabo giratório ergonômico. Ideal para quem deseja contar com a qualidade, versatilidade e durabilidade que só a Tramontina oferece.',
+                preco: 1930.00,
+                parcela: 193.00,
+                imagem: 'asset/image/produtos/produto-05.jpg',
+            }, {
+                id: 6,
+                nome: 'MOTOSSERRA GASOLINA ORIGINAL',
+                descricao: 'A nova motosserra ms 180 da stihl é um modelo básico que é ideal para cortar lenha, ela alia potência e praticidade.',
+                preco: 990.00,
+                parcela: 99.00,
+                imagem: 'asset/image/produtos/produto-06.jpg',
+            }];
+
+            function openModal(id) {
+                console.log(id);
+            }
+
+            $(document).ready(function() {
+                let html = '';
+
+                produtos.forEach(produto => {
+                    html += `<div class="col-md-3 card-produto">
+                                <a onClick="openModal(${produto.id})"><img src=${produto.imagem} height="200"></a>
+                                <a onClick="openModal(${produto.id})"><p class="title-produto">${produto.nome}</p></a>
+                                <p class="price-produto">R$${produto.preco}</p>
+                                <p class="parcelamento-produto">em até <b>10x</b> de <b>R$${produto.parcela}</b> sem juros</p>
+                                <button class="btn btn-success btn-block">Comprar</button>
+                            </div>`;
+                });
+
+                $("#container-produtos").html(html);
+            });
+        </script>
 </body>
 
 </html>

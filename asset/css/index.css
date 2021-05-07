@@ -192,3 +192,41 @@ p {
 .logo:hover {
     text-decoration: none;
 }
+
+.container-produtos {
+    display: inline-flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.card-produto {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.card-produto:hover {
+    border-color: #cccccc;
+}
+
+.card-produto:hover a {
+    cursor: pointer;
+}
+
+.title-produto {
+    margin-top: 10px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.price-produto {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.parcelamento-produto {
+    font-size: 13px;
+}
