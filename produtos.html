@@ -94,7 +94,7 @@
                                 <b>DESCRIÇÃO:</b>
                                 <span id="modal-descricao"></span>
                             </div><br>
-                            <button type="button" class="btn btn-success btn-block">Comprar agora</button>
+                            <button type="button" class="btn btn-success btn-block" id="modal-button">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,8 @@
         <script src="asset/jquery/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="asset/bootstrap/js/bootstrap.min.js"></script>
-
+        <script src="asset/sweetalert2/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="asset/sweetalert2/sweetalert2.css">
         <script>
             let produtos = [{
                 id: 1,
@@ -159,7 +160,45 @@
                 $('#modal-parcelamento').html(`em até <b>10x</b> de <b>R$ ${produtos[index].parcela}</b> sem juros`);
                 $('#modal-descricao').html(produtos[index].descricao);
 
+                $('#modal-button').attr('onClick', `addItem(${id})`);
                 $('#modal-produto').modal('show');
+            }
+
+            function addItem(id) {
+                let produtosStorage = JSON.parse(sessionStorage.getItem('produtos'));
+                console.log(produtosStorage);
+
+                let index = produtos.findIndex((produto) => produto.id === id);
+
+                if (!produtosStorage) {
+                    produtosStorage = [
+                        produtos[index]
+                    ];
+                } else {
+                    let indexStorage = produtosStorage.findIndex((produto) => produto.id === id);
+
+                    if (indexStorage !== -1) {
+                        if (produtosStorage[indexStorage].quantidade === undefined) {
+                            produtosStorage[indexStorage].quantidade = 2;
+                        } else {
+                            produtosStorage[indexStorage].quantidade++;
+                        }
+                    } else {
+                        produtosStorage.push(produtos[index]);
+                    }
+                }
+
+                sessionStorage.setItem('produtos', JSON.stringify(produtosStorage));
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    text: 'Item adicionado ao carrinho',
+                    width: '350px',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
             }
 
             $(document).ready(function() {
@@ -171,7 +210,7 @@
                                 <a onClick="openModal(${produto.id})"><p class="title-produto">${produto.nome}</p></a>
                                 <p class="price-produto">R$${produto.preco}</p>
                                 <p class="parcelamento-produto">em até <b>10x</b> de <b>R$${produto.parcela}</b> sem juros</p>
-                                <button class="btn btn-success btn-block">Comprar</button>
+                                <button onClick="addItem(${produto.id})" class="btn btn-success btn-block">Comprar</button>
                             </div>`;
                 });
 
