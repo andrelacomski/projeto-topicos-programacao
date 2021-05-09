@@ -77,6 +77,30 @@
                 </nav>
             </div>
         </footer>
+
+        <div class="modal fade" id="modal-produto" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title"></h5>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="col-md-5" id="modal-img">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="price-produto" id="modal-price"></p>
+                            <p class="parcelamento-produto" id="modal-parcelamento"></p>
+                            <div class="descricao-produto">
+                                <b>DESCRIÇÃO:</b>
+                                <span id="modal-descricao"></span>
+                            </div><br>
+                            <button type="button" class="btn btn-success btn-block">Comprar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="asset/jquery/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="asset/bootstrap/js/bootstrap.min.js"></script>
@@ -127,7 +151,15 @@
             }];
 
             function openModal(id) {
-                console.log(id);
+                let index = produtos.findIndex((produto) => produto.id === id);
+
+                $('#modal-title').text(produtos[index].nome);
+                $('#modal-img').html(`<img src="${produtos[index].imagem}" width="300" height="300">`);
+                $('#modal-price').text(`R$ ${produtos[index].preco}`);
+                $('#modal-parcelamento').html(`em até <b>10x</b> de <b>R$ ${produtos[index].parcela}</b> sem juros`);
+                $('#modal-descricao').html(produtos[index].descricao);
+
+                $('#modal-produto').modal('show');
             }
 
             $(document).ready(function() {
