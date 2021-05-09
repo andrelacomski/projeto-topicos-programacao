@@ -234,3 +234,8 @@ p {
 .descricao-produto {
     text-align: justify;
 }
+
+.fa-shopping-bag {
+    font-size: 35px;
+    color: #77cc6d;
+}
