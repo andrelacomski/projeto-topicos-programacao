@@ -35,10 +35,40 @@
 
         <div>
             <div class="mb-4 center container-40">
-                <h3>Carrinha de Compras</h3>
+                <h3>Carrinho de Compras</h3>
 
                 <div class="container-produtos row d-flex justify-content-center" id='container-produtos'>
-
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listagem-produtos">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="container-totais">
+                    <ul class="checkout-totais">
+                        <li>Sub-Total: <b id="sub-total"></b></li>
+                        <li>Frete: <b>Grátis</b></li>
+                        <li>Total do pedido: <b id="total"></b></li>
+                    </ul>
+                    <div class="checkout-button">
+                        <a class="btn btn-light" href="produtos.html">Voltar as compras</a>
+                        <button class="btn btn-success green">Finalizar pedido</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,6 +116,41 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="asset/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/84cee3b0e6.js" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function() {
+                let produtos = JSON.parse(sessionStorage.getItem('produtos'));
+                let total = 0;
+                let html = '';
+
+                if (!produtos) {
+                    $('#container-produtos').html('<h5>Carrinho de compras vazio.</h5>');
+                    $('#container-totais').hide();
+                    return;
+                }
+
+                produtos.forEach((produto) => {
+                    if (produto.quantidade === undefined) {
+                        produto.quantidade = 1;
+                    }
+
+                    total += produto.preco * produto.quantidade;
+
+                    html += `<tr>
+                                <th scope="row">${produto.id}</th>
+                                <td>${produto.nome}</td>
+                                <td>${produto.quantidade}</td>
+                                <td>R$${produto.preco.toFixed(2)}</td>
+                                <td>R$${(produto.preco * produto.quantidade).toFixed(2)}</td>
+                            </tr>
+                    `;
+                });
+
+                $('#listagem-produtos').html(html);
+
+                $('#sub-total, #total').text(`R$${total.toFixed(2)}`);
+            });
+        </script>
 </body>
 
 </html>

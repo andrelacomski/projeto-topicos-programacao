@@ -239,3 +239,9 @@ p {
     font-size: 35px;
     color: #77cc6d;
 }
+
+.checkout-totais,
+.checkout-button {
+    text-align: end;
+    list-style: none;
+}
