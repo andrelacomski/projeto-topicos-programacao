@@ -16,7 +16,7 @@
         <header>
             <div class="row">
                 <div class="col-md-6">
-                    <a href="" class="logo">
+                    <a href="index.html" class="logo">
                         <h3>Lacomski Agrícola</h3>
                         <p>Tudo para sua agricultura</p>
                     </a>
@@ -41,7 +41,7 @@
                     <table class="table">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">Imagem</th>
                                 <th scope="col">Produto</th>
                                 <th scope="col">Quantidade</th>
                                 <th scope="col">Preço</th>
@@ -49,23 +49,16 @@
                             </tr>
                         </thead>
                         <tbody id="listagem-produtos">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div id="container-totais">
-                    <ul class="checkout-totais">
+                    <ul class="carrinho-totais">
                         <li>Sub-Total: <b id="sub-total"></b></li>
                         <li>Frete: <b>Grátis</b></li>
                         <li>Total do pedido: <b id="total"></b></li>
                     </ul>
-                    <div class="checkout-button">
+                    <div class="carrinho-button">
                         <a class="btn btn-light" href="produtos.html">Voltar as compras</a>
                         <button class="btn btn-success green">Finalizar pedido</button>
                     </div>
@@ -112,34 +105,99 @@
                 </nav>
             </div>
         </footer>
+
+        <link rel="stylesheet" href="asset/sweetalert2/sweetalert2.css">
         <script src="asset/jquery/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+        <script src="asset/sweetalert2/sweetalert2.all.min.js"></script>
         <script src="https://kit.fontawesome.com/84cee3b0e6.js" crossorigin="anonymous"></script>
 
         <script>
-            $(document).ready(function() {
+            function addQuantidade(id) {
+                let produtosStorage = JSON.parse(sessionStorage.getItem('produtos'));
+                let index = produtosStorage.findIndex((produto) => produto.id === id);
+
+                if (index != -1) {
+                    produtosStorage[index].quantidade++;
+                    sessionStorage.setItem('produtos', JSON.stringify(produtosStorage));
+                    atualizaCarrinho();
+                }
+            }
+
+            function subQuantidade(id) {
+                let produtosStorage = JSON.parse(sessionStorage.getItem('produtos'));
+                let index = produtosStorage.findIndex((produto) => produto.id === id);
+
+                if (index != -1) {
+                    produtosStorage[index].quantidade--;
+
+                    if (produtosStorage[index].quantidade === 0) {
+                        produtosStorage[index].quantidade = 1;
+                        removeProduto(id);
+                    }
+                }
+
+                sessionStorage.setItem('produtos', JSON.stringify(produtosStorage));
+
+                atualizaCarrinho();
+            }
+
+            function removeProduto(id) {
+                Swal.fire({
+                    title: 'Tem certeza que deseja remover o produto?',
+                    icon: 'error',
+                    showDenyButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: `Sim`,
+                    denyButtonText: `Não`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let produtosStorage = JSON.parse(sessionStorage.getItem('produtos'));
+                        let index = produtosStorage.findIndex((produto) => produto.id === id);
+
+                        if (index != -1) {
+                            produtosStorage.splice(index, 1);
+                            sessionStorage.setItem('produtos', JSON.stringify(produtosStorage));
+
+                            atualizaCarrinho();
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                text: 'Item removido do carrinho',
+                                width: '350px',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    }
+                })
+            }
+
+            function atualizaCarrinho() {
                 let produtos = JSON.parse(sessionStorage.getItem('produtos'));
                 let total = 0;
                 let html = '';
 
-                if (!produtos) {
+                if (!produtos || produtos.length == 0) {
                     $('#container-produtos').html('<h5>Carrinho de compras vazio.</h5>');
                     $('#container-totais').hide();
                     return;
                 }
 
                 produtos.forEach((produto) => {
-                    if (produto.quantidade === undefined) {
-                        produto.quantidade = 1;
-                    }
-
                     total += produto.preco * produto.quantidade;
 
                     html += `<tr>
-                                <th scope="row">${produto.id}</th>
+                                <th scope="row"><img class="carrinho-image" src="${produto.imagem}" height="60" width="60"></th>
                                 <td>${produto.nome}</td>
-                                <td>${produto.quantidade}</td>
+                                <td>
+                                    <i class="m-1 fa fa-minus subAdd" onClick="subQuantidade(${produto.id})"></i>
+                                    <input class="m-1 input-quantidade" disabled value="${produto.quantidade}">
+                                    <i class="m-1 fa fa-plus subAdd" onClick="addQuantidade(${produto.id})"></i>
+                                    <i class="m-1 fa fa-trash-alt remove" onClick="removeProduto(${produto.id})"></i>
+                                    </td>
                                 <td>R$${produto.preco.toFixed(2)}</td>
                                 <td>R$${(produto.preco * produto.quantidade).toFixed(2)}</td>
                             </tr>
@@ -147,8 +205,11 @@
                 });
 
                 $('#listagem-produtos').html(html);
-
                 $('#sub-total, #total').text(`R$${total.toFixed(2)}`);
+            }
+
+            $(document).ready(function() {
+                atualizaCarrinho();
             });
         </script>
 </body>

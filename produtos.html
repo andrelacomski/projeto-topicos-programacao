@@ -171,8 +171,6 @@
 
             function addItem(id) {
                 let produtosStorage = JSON.parse(sessionStorage.getItem('produtos'));
-                console.log(produtosStorage);
-
                 let index = produtos.findIndex((produto) => produto.id === id);
 
                 if (!produtosStorage) {
@@ -183,12 +181,9 @@
                     let indexStorage = produtosStorage.findIndex((produto) => produto.id === id);
 
                     if (indexStorage !== -1) {
-                        if (produtosStorage[indexStorage].quantidade === undefined) {
-                            produtosStorage[indexStorage].quantidade = 2;
-                        } else {
-                            produtosStorage[indexStorage].quantidade++;
-                        }
+                        produtosStorage[indexStorage].quantidade++;
                     } else {
+                        produtos[index].quantidade = 1;
                         produtosStorage.push(produtos[index]);
                     }
                 }
@@ -202,8 +197,7 @@
                     width: '350px',
                     showConfirmButton: false,
                     timer: 1500
-                })
-
+                });
             }
 
             $(document).ready(function() {
