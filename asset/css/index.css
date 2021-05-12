@@ -273,3 +273,17 @@ p {
     border-radius: 5px;
     border: 1px solid #dbdbdb;
 }
+
+.text-left {
+    font-size: 13px;
+}
+
+.error {
+    color: red;
+    border-color: red;
+}
+
+.success {
+    color: green;
+    border-color: green;
+}
